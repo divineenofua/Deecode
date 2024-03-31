@@ -8,12 +8,19 @@ module.exports = {
         darkMode: {
           background:'#1a202c',
           text:'#e2e8f0',
+          layer:'#2d3748',
+          lighterlayer:'#4a5568',
+          width:'30px'
         },
         lightMode: {
           background:'#ffffff',
           text: '#333333',
+        },
+        width: {
+          widthe:'20px'
         }
-      }
+      },
+       
     },
   },
   plugins: [],

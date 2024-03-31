@@ -1,11 +1,10 @@
 import { useRef } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import GirlImageAnime from "../assets/Animation - 1711391569191.json";
-
+ 
 const Home = () => {
   const imageRef = useRef<LottieRefCurrentProps>(null);
-
-  return (
+   return (
     <div className="flex flex-col-reverse md:flex-row mx-auto  p-10 items-center justify-around">
       <div className=" sm:text-center md:text-left  ">
         <h1 className=" text-3xl font-semibold p-5 ">
@@ -26,6 +25,7 @@ const Home = () => {
           animationData={GirlImageAnime}
         />
       </div>
+     
     </div>
   );
 };

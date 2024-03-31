@@ -1,46 +1,81 @@
-import   { useState, useRef } from 'react';
-import { FaEarlybirds} from 'react-icons/fa';
-import Lottie, {LottieRefCurrentProps}   from 'lottie-react'
-import lighModeAnime from '../assets/Animation - 1711390148326.json'
+import { useState, useRef } from "react";
+// import { Link } from 'react-router-dom';
+import { FaEarlybirds, FaBars, FaTimes, FaDashcube } from "react-icons/fa";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import lighModeAnime from "../assets/Animation - 1711390148326.json";
 
 const NavBar = () => {
-  const [setMode , showSetMode] = useState(false);
+  const [setMode, showSetMode] = useState(false);
   const toggleRef = useRef<LottieRefCurrentProps>(null);
-  const [position, setPosition] = useState(0);  
+  const [position, setPosition] = useState(0);
+  const [menu, setMenu] = useState(false);
 
   const handleClick = () => {
-    const newPosition = position === 0 ? 45 : 0; 
+    const newPosition = position === 0 ? 45 : 0;
     toggleRef.current?.goToAndStop(newPosition, true);
-    setPosition(newPosition); 
-    showSetMode(!setMode) 
-    
-   };
+    setPosition(newPosition);
+    showSetMode(!setMode);
+  };
+  const showMenu = () => {
+    setMenu(!menu);
+  };
+  const myList = ["About", "Project", "Certifications", "Contact"];
 
   return (
-    <div className={setMode ? 'darkMode' : 'lightMode'}>
-    
-    <nav className='px-6 py-4 max-w-screen-xl mx-auto max-h-20 bg-transparent content-center  rounded-xl shadow-lg flex items-center justify-between '>
+    <div className={setMode ? "darkMode" : "lightMode"}>
+      <nav className="px-6 py-4 max-w-screen-xl mx-auto max-h-20 relative  bg-transparent  rounded-xl shadow-lg flex items-center  justify-between ">
         <div className="logo flex items-center cursor-pointer">
-        <FaEarlybirds className='inline-block mr-2' />
-        <h2 className='text-xl font-semibold '>DEEVINE</h2>
+          <FaEarlybirds className="inline-block mr-2" />
+          <h2 className="text-xl font-semibold ">DEEVINE</h2>
         </div>
-        <div className="flex content-center justify-center ">
-          <ul className='flex space-x-4'>
-            <li className=" hover:text-purple-900  cursor-pointer hover:animate-bounce">About</li>
-            <li className=" hover:text-purple-900 cursor-pointer hover:animate-bounce" >Project</li>
-            <li className=" hover:text-purple-900 cursor-pointer hover:animate-bounce">Certifications</li>
-            <li className=" hover:text-purple-900 cursor-pointer hover:animate-bounce">Contact</li>
-     
+        <div className="md:flex  hidden content-center justify-center ">
+          <ul className="flex space-x-4">
+           
+            {myList.map((item) => (
+        
+                <li className=" hover:text-purple-900  cursor-pointer hover:animate-bounce flex">
+                 <FaDashcube /> {item}
+                </li>  
+              ))}
           </ul>
-          
         </div>
-          
-        <Lottie className=' max-w-12.7 cursor-pointer' onClick={handleClick} style={{ width: '100px', height: '100px' }}   loop={false} autoplay={false} lottieRef={toggleRef}  
-          animationData={lighModeAnime} /> 
- 
-    </nav>
-     </div>
-  )
-}
+        <div className=" flex items-center">
+          <Lottie
+            className="cursor-pointer mr-0 ml-0 w-14 p-0"
+            onClick={handleClick}
+            loop={false}
+            autoplay={false}
+            lottieRef={toggleRef}
+            animationData={lighModeAnime}
+          />{" "}
+          {menu ? (
+            <FaTimes
+              className="md:hidden cursor-pointer w-14 "
+              onClick={showMenu}
+            />
+          ) : (
+            <FaBars
+              className="md:hidden cursor-pointer w-14 "
+              onClick={showMenu}
+            />
+          )}
+        </div>
+        {menu ? (
+          <div className=" right-0 left-0 top-20  bg-gray-800 p-10 z-50 absolute  md:hidden  ">
+            <ul className="flex-column items-center justify-center   text-xl    ">
+              {myList.map((item) => (
+                <li className=" hover:text-purple-900 pb-5 cursor-pointer transition duration-700 hover:animate-bounce flex">
+                 <FaDashcube /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          ""
+        )}
+      </nav>
+    </div>
+  );
+};
 
-export default NavBar
+export default NavBar;

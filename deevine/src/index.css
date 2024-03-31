@@ -32,6 +32,7 @@
 .darkMode {
   --bg-color: #1a202c;
   --text-color: #e2e8f0;
+  --layer-color: #2d3748;
  font-family: Georgia, 'Times New Roman', Times, serif;
  
 }
