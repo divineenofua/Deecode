@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
-// import { Link } from 'react-router-dom';
-import { FaEarlybirds, FaBars, FaTimes, FaDashcube } from "react-icons/fa";
+ import { FaEarlybirds, FaBars, FaTimes, FaDashcube } from "react-icons/fa";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import lighModeAnime from "../assets/Animation - 1711390148326.json";
-
+  
 const NavBar = () => {
   const [setMode, showSetMode] = useState(false);
   const toggleRef = useRef<LottieRefCurrentProps>(null);
@@ -19,10 +18,10 @@ const NavBar = () => {
   const showMenu = () => {
     setMenu(!menu);
   };
-  const myList = ["About", "Project", "Certifications", "Contact"];
+  const myList = ["Home", "Projects", "Skills", "Contact"];
 
   return (
-    <div className={setMode ? "darkMode" : "lightMode"}>
+     <div className={setMode ? "darkMode" : "lightMode"}>
       <nav className="px-6 py-4 max-w-screen-xl mx-auto max-h-20 relative  bg-transparent  rounded-xl shadow-lg flex items-center  justify-between ">
         <div className="logo flex items-center cursor-pointer">
           <FaEarlybirds className="inline-block mr-2" />
@@ -30,15 +29,16 @@ const NavBar = () => {
         </div>
         <div className="md:flex  hidden content-center justify-center ">
           <ul className="flex space-x-4">
-           
-            {myList.map((item) => (
-        
+            {myList.map((item) => ( 
+            // <Link  to={`/${item.toLowerCase()}`}> 
+            <a href={`#${item.toLowerCase()}`}> 
                 <li className=" hover:text-purple-900  cursor-pointer hover:animate-bounce flex">
                  <FaDashcube /> {item}
-                </li>  
+                </li> </a>
+                //  </Link>
               ))}
           </ul>
-        </div>
+         </div>
         <div className=" flex items-center">
           <Lottie
             className="cursor-pointer mr-0 ml-0 w-14 p-0"
@@ -74,7 +74,9 @@ const NavBar = () => {
           ""
         )}
       </nav>
+  
     </div>
+     
   );
 };
 

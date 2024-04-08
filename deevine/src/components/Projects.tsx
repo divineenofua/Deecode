@@ -1,12 +1,11 @@
 import Project from "./Project"
-import chatter from "../assets/chatter.png";
+ import chatter from "../assets/chatter.png";
 import Altschoolclone from "../assets/AltschoolClone.png";
 import GitRepo from "../assets/gitrepo.png";
-import { FaArrowRight } from "react-icons/fa";
-
+ 
 const Projects = () => {
   return (
-    <div className=" bg-gray-800  ">
+    <div id="projects" className=" bg-gray-800  ">
       <div className="text-center pt-10 pb-10">
         <h1 className=" pb-3 font-sans italic text-purple-400 text-5xl">
           Projects
@@ -20,9 +19,10 @@ const Projects = () => {
      
       </div>
       <div className="flex items-center justify-center">
-        <button className=" animate-bounce bg-purple-900 hover:bg-purple-400 rounded-md p-4 flex items-center gap-1 ">View More <FaArrowRight /></button>
-      </div>
+       </div>
+ 
     </div>
+
   )
 }
 

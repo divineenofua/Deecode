@@ -5,7 +5,7 @@ import { FaHtml5, FaCss3, FaReact , FaVuejs, FaJs , FaFigma } from "react-icons/
 const Skills = () => {
     
   return (
-    <div className=" grid grid-cols-2 gap-7 sm:grid-cols-3  md:grid-cols-8 sm:gap-4 pt-10 m-4  sm:m-6 pb-20 border-t border-b border-gray-400 ">
+    <div id="skills" className=" grid grid-cols-2 gap-7 sm:grid-cols-3  md:grid-cols-8 sm:gap-4 pt-10 m-4  sm:m-6 pb-20 border-t border-b border-gray-400 ">
         <div className="flex gap-2 items-center text-xl border-l-2 border-gray-400 md:border-none pl-5  ">
       <FaHtml5 className="hover:animate-ping  text-5xl" />  <h4 className="hover:animate-pulse" >HTML5</h4>
         </div>

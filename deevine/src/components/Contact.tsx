@@ -8,7 +8,7 @@ const Contact = () => {
     const imgeRef = useRef<LottieRefCurrentProps>(null);
 
   return (
-    <div className=' m-10 pb-40  '> 
+    <div id="contact" className=' m-10 pb-40  '> 
         <div className='flex-col p-5  bg-darkMode-layer
          justify-center items-center mt-0'> 
         <div className="text-center">
