@@ -2,8 +2,14 @@ import { useState, useRef } from "react";
  import { FaEarlybirds, FaBars, FaTimes, FaDashcube } from "react-icons/fa";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import lighModeAnime from "../assets/Animation - 1711390148326.json";
+interface ChildProps {
+  toggleState: () => void;}
+
+
+const NavBar: React.FC<ChildProps>  = (props) => {
+ 
+ 
    
-const NavBar = ( ) => {
   const [setMode, showSetMode] = useState(false);
   const toggleRef = useRef<LottieRefCurrentProps>(null);
   const [position, setPosition] = useState(0);
@@ -14,7 +20,8 @@ const NavBar = ( ) => {
     toggleRef.current?.goToAndStop(newPosition, true);
     setPosition(newPosition);
     showSetMode(!setMode);
-   };
+    props.toggleState();
+     };
   const showMenu = () => {
     setMenu(!menu);
   };
@@ -22,7 +29,7 @@ const NavBar = ( ) => {
  
 
   return (
-     <div className={setMode ? 'bg-darkMode-background text-darkMode-text' : 'bg-lightMode-background text-lightMode-text'}> 
+     <div> 
       <nav className="px-6 py-4 max-w-screen-xl mx-auto max-h-20 relative  bg-transparent  rounded-xl shadow-lg flex items-center  justify-between ">
         <div className="logo flex items-center cursor-pointer">
           <FaEarlybirds className="inline-block mr-2" />
@@ -31,11 +38,11 @@ const NavBar = ( ) => {
         <div className="md:flex  hidden content-center justify-center ">
           <ul className="flex space-x-4">
             {myList.map((item) => (  
-            // <Link  to={`/${item.toLowerCase()}`}> 
+              
             <a href={`#${item.toLowerCase()}`}> 
                 <li className=" hover:text-purple-900  cursor-pointer hover:animate-bounce flex">
                  <FaDashcube /> {item}
-                </li> </a>
+                </li> </a> 
                 //  </Link>
               ))}
           </ul>
@@ -65,7 +72,7 @@ const NavBar = ( ) => {
           <div className=" right-0 left-0 top-20  bg-gray-800 p-10 z-50 absolute  md:hidden  ">
             <ul className="flex-column items-center justify-center   text-xl    ">
               {myList.map((item) => (
-                <li className=" hover:text-purple-900 pb-5 cursor-pointer transition duration-700 hover:animate-bounce flex">
+                <li className=" hover:text-purple-900 pb-5 text-white cursor-pointer transition duration-700 hover:animate-bounce flex">
                  <FaDashcube /> {item}
                 </li>
               ))}

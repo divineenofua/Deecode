@@ -4,15 +4,18 @@ import GirlImageAnime from "../assets/Animation - 1711391569191.json";
  import Skills from './Skills'
 import Projects from './Projects'
 import Contact from './Contact'
- 
+  
+interface ChildProps {
+  toggle:boolean
+}
 
 
-const Home = () => {
+const Home: React.FC<ChildProps>  = (props) => {
   const imageRef = useRef<LottieRefCurrentProps>(null);
    return (
     <> 
      
-    <div className="flex flex-col-reverse md:flex-row mx-auto  p-10 items-center justify-around">
+    <div className="flex flex-col-reverse md:flex-row mx-auto   p-10 items-center justify-around">
       <div className=" sm:text-center md:text-left  ">
         <h1 className=" text-3xl font-semibold p-5 ">
         I'm ENOFUA DIVINE
@@ -35,9 +38,9 @@ const Home = () => {
      
     </div>
     <Skills />
-    <Projects />
+    <Projects  toggle={props.toggle} />
  
-    <Contact />
+    <Contact toggle={props.toggle} />
     </>
   );
 };

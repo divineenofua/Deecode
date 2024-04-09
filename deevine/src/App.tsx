@@ -3,25 +3,24 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
  import Home from './components/Home'
  import Projects from './components/Projects'
  import NavBar from './components/NavBar';
-//  import { useState } from 'react';
+ import { useState } from 'react';
   
 function App() {
-  // const [mode, setMode] = useState(false);
+  const [isToggleOn, setIsToggleOn] = useState(true);
 
-  // const handleSetMode = () => {
-  //   setMode(!mode);
-  // };
-   
+  // Function to toggle the boolean value
+  const toggleState = () => {
+    setIsToggleOn(!isToggleOn);}
+
   return (
     <>
- {/* className={mode ? 'bg-darkMode-background text-darkMode-text' : 'bg-lightMode-background text-lightMode-text'} */}
-    <div  >
-    <NavBar />
+ 
+    <div className={ isToggleOn ? 'bg-darkMode-background text-darkMode-text' : 'bg-lightMode-background text-lightMode-text'}>
+    <NavBar toggleState={toggleState}  />
     <Router>
       <Routes>
-      <Route path="/" element={<Home />} />
-         
-        <Route path="/projects" element={<Projects />} />
+      <Route path="/" element={<Home toggle={isToggleOn} />} /> 
+        <Route path="/projects" element={<Projects toggle={isToggleOn} />} />
       </Routes>
     </Router>
   
