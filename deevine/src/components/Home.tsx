@@ -4,8 +4,7 @@ import GirlImageAnime from "../assets/Animation - 1711391569191.json";
  import Skills from './Skills'
 import Projects from './Projects'
 import Contact from './Contact'
-import {  Link }   from 'react-router-dom'
-import { FaArrowRight } from "react-icons/fa";
+ 
 
 
 const Home = () => {
@@ -37,8 +36,7 @@ const Home = () => {
     </div>
     <Skills />
     <Projects />
-    <Link to='/projects'>  <button className=" animate-bounce bg-purple-900 hover:bg-purple-400 rounded-md p-4 flex items-center gap-1 ">View More <FaArrowRight /></button></Link>  
-
+ 
     <Contact />
     </>
   );

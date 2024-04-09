@@ -3,14 +3,19 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
  import Home from './components/Home'
  import Projects from './components/Projects'
  import NavBar from './components/NavBar';
+ import { useState } from 'react';
   
 function App() {
-   
+  const [mode, setMode] = useState(false);
+
+  const handleSetMode = () => {
+    setMode(!mode);
+  };
    
   return (
     <>
  
-    <div className='darkMode'>
+    <div className={mode ? 'bg-darkMode-background text-darkMode-text' : 'bg-lightMode-background text-lightMode-text'}>
     <NavBar />
     <Router>
       <Routes>

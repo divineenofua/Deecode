@@ -2,6 +2,8 @@ import Project from "./Project"
  import chatter from "../assets/chatter.png";
 import Altschoolclone from "../assets/AltschoolClone.png";
 import GitRepo from "../assets/gitrepo.png";
+import {  Link }   from 'react-router-dom'
+import { FaArrowRight } from "react-icons/fa";
  
 const Projects = () => {
   return (
@@ -19,6 +21,8 @@ const Projects = () => {
      
       </div>
       <div className="flex items-center justify-center">
+      <Link to='/projects'>  <button className=" animate-bounce bg-purple-900 hover:bg-purple-400 rounded-md p-4 flex items-center gap-1 ">View More <FaArrowRight /></button></Link>  
+
        </div>
  
     </div>
