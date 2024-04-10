@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
  import { FaEarlybirds, FaBars, FaTimes, FaDashcube } from "react-icons/fa";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import lighModeAnime from "../assets/Animation - 1711390148326.json";
-interface ChildProps {
+ interface ChildProps {
   toggleState: () => void;}
 
 
@@ -29,7 +29,7 @@ const NavBar: React.FC<ChildProps>  = (props) => {
  
 
   return (
-     <div> 
+     <div className= { !setMode ? " bg-darkMode-background fixed z-50 w-full " : "bg-lightMode-background fixed z-50 w-full" } > 
       <nav className="px-6 py-4 max-w-screen-xl mx-auto max-h-20 relative  bg-transparent  rounded-xl shadow-lg flex items-center  justify-between ">
         <div className="logo flex items-center cursor-pointer">
           <FaEarlybirds className="inline-block mr-2" />
@@ -38,7 +38,10 @@ const NavBar: React.FC<ChildProps>  = (props) => {
         <div className="md:flex  hidden content-center justify-center ">
           <ul className="flex space-x-4">
             {myList.map((item) => (  
-              
+              item ==='Home' ? <a href='/' >
+              <li className=" hover:text-purple-900  cursor-pointer hover:animate-bounce flex">
+              <FaDashcube /> {item}
+             </li></a> :
             <a href={`#${item.toLowerCase()}`}> 
                 <li className=" hover:text-purple-900  cursor-pointer hover:animate-bounce flex">
                  <FaDashcube /> {item}
@@ -72,9 +75,14 @@ const NavBar: React.FC<ChildProps>  = (props) => {
           <div className=" right-0 left-0 top-20  bg-gray-800 p-10 z-50 absolute  md:hidden  ">
             <ul className="flex-column items-center justify-center   text-xl    ">
               {myList.map((item) => (
+                 item ==='Home' ? <a href='/' >
+                 <li  className=" hover:text-purple-900 pb-5 text-white cursor-pointer transition duration-700 hover:animate-bounce flex">
+                 <FaDashcube /> {item}
+                </li></a> :
+                            <a href={`#${item.toLowerCase()}`}> 
                 <li className=" hover:text-purple-900 pb-5 text-white cursor-pointer transition duration-700 hover:animate-bounce flex">
                  <FaDashcube /> {item}
-                </li>
+                </li></a>
               ))}
             </ul>
           </div>

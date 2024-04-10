@@ -15,17 +15,17 @@ const Home: React.FC<ChildProps>  = (props) => {
    return (
     <> 
      
-    <div className="flex flex-col-reverse md:flex-row mx-auto   p-10 items-center justify-around">
+    <div className="flex flex-col-reverse md:flex-row mx-auto     p-10 items-center justify-around">
       <div className=" sm:text-center md:text-left  ">
         <h1 className=" text-3xl font-semibold p-5 ">
-        I'm ENOFUA DIVINE
+        I'M ENOFUA DIVINE
         </h1>
         <p >
-            I'm an Electrical Electronics Engineer and a front-End Engineer with a Diploma from <a className="text-purple-900" href="http://">Altschool Africa</a>
-             I guess You can say i have a Knack for anything Engineering and technological Development </p>
+            I'm an Electrical Electronics Engineer student and a front-End Engineer with a Diploma from <a className="text-purple-900" href="https://www.altschoolafrica.com/">  Altschool Africa .  </a> 
+             I'm all about Engineering  and technology. Beyond Tech i love reading and that include novels, Biographies and Autobiogrphies of significant people  and also funny tweets . </p>
       </div>
 
-      <div className="w-3/4">
+      <div className="w-3/4 mt-28">
         <Lottie
           onComplete={() => {
             imageRef.current?.goToAndPlay(45, true);

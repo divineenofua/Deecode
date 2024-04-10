@@ -16,7 +16,7 @@ function App() {
     <>
  
     <div className={ isToggleOn ? 'bg-darkMode-background text-darkMode-text' : 'bg-lightMode-background text-lightMode-text'}>
-    <NavBar toggleState={toggleState}  />
+    <NavBar   toggleState={toggleState}  />
     <Router>
       <Routes>
       <Route path="/" element={<Home toggle={isToggleOn} />} /> 
