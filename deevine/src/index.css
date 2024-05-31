@@ -1,34 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap ');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+ 
+ :root {
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  /* font-family: "Dosis", sans-serif; font-optical-sizing : auto; */
+  font-family: "Roboto Mono", monospace; 
   line-height: 1.5;
   font-weight: 400;
+  
+ }
+ /* body{
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  transition: all 7s ease;
+ } */
+.bg{
+  transition: all 3s ease;
+}
+ .bodyBg{
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 32 44 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
+ }
+.lgBg{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(51 51 51 / var(--tw-text-opacity));
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-*/
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-} */
+
 .darkMode {
   --bg-color: #1a202c;
   --text-color: #e2e8f0;
@@ -51,3 +57,32 @@
  html{
   scroll-behavior: smooth;
  }
+
+ .Menu {
+  position: absolute;
+  z-index: 300;
+  opacity: 0;
+  transition: all 1.5s ease;
+ }
+ .openMenu{
+  top: 5rem;
+  opacity: 1;
+  position: absolute;
+  padding: 2.5rem;
+   
+  right: 0;
+  left: 0;
+ 
+ }
+ .darkbg{
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+ }
+ 
+ .lightbg{
+   
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+}
+
+  

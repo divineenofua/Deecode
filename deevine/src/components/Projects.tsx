@@ -1,4 +1,5 @@
 import Project from "./Project";
+import DashBoard from '../assets/Admin Dashboard 8.png'
 import chatter from "../assets/chatter.png";
  import Media from '../assets/e media.png'
  import school from '../assets/e school.png'
@@ -7,12 +8,37 @@ import chatter from "../assets/chatter.png";
  import commerce from '../assets/ecommerce.png'
  import expense from '../assets/expense tracker.png'
 
+ import {
+  FaCss3,
+  FaVuejs,
+  FaJs,
+  FaHtml5,
+  FaFigma,
+  FaGithub,
+  FaReact,
+ } from "react-icons/fa";
+ import { TbBrandNextjs } from "react-icons/tb";
+ import { SiTailwindcss } from "react-icons/si";
+
+ 
+const iconSets = {
+  projectA: [<TbBrandNextjs key="RiNextjsFill" />, <SiTailwindcss />  ,<FaFigma key="figma" />, <FaGithub key="github" />  ],
+  projectB: [ <FaVuejs key="Vuejs" />, <FaCss3 key="FaCss3" />, <FaFigma key="figma" />, <FaGithub key="github" />],
+  projectC: [<FaHtml5 key="Html5" />,<FaCss3 key="FaCss3" />,< FaJs key="js" />, ],
+  projectD: [<FaHtml5 key="Html5" />, <FaCss3 key="FaCss3" />,< FaJs key="js" /> ],
+  projectE: [<FaCss3 key="FaCss3" />,<FaReact key="react" />, ],
+  projectF: [<FaHtml5 key="Html5" />, <FaCss3 key="FaCss3" />,< FaJs key="js" /> ],
+  projectG: [<FaHtml5 key="Html5" />, <FaCss3 key="FaCss3" />,< FaJs key="js" /> ],
+  projectH: [<FaHtml5 key="Html5" />, <FaCss3 key="FaCss3" />,< FaJs key="js" /> ],
+  projectI: [<FaHtml5 key="Html5" />, <FaCss3 key="FaCss3" />,< FaJs key="js" /> ],
+  projectK: [<FaHtml5 key="Html5" />, <FaCss3 key="FaCss3" />,< FaJs key="js" /> ],
+};
 
 
 import Altschoolclone from "../assets/AltschoolClone.png";
 import GitRepo from "../assets/gitrepo.png";
-import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
+
+ import { FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
 
 interface ChildProps {
@@ -28,8 +54,7 @@ const Projects: React.FC<ChildProps> = (props) => {
    
   return (
     <div
-      id="projects"
-      className={props.toggle ? " bg-gray-800  " : "bg-gray-50"}
+      id="projects" 
     >
       <div className="text-center pt-10 pb-10">
         <h1 className=" pb-3 font-sans italic text-purple-400 text-5xl">
@@ -38,8 +63,31 @@ const Projects: React.FC<ChildProps> = (props) => {
         <span className="text-xl">Here are a few of my Works</span>
       </div>
       <div className="md:grid md:mb-0 md:pb-0 grid-cols-3 m-10  gap-5">
+
+      <Project
+          text="Built an admin panel consisting of a login and dashboard functionalities for a client's business.  Utilized Recharts to implement dynamic and interactive charts, providing insightful data visualization. "
+          text2="This Application Streamlines administrative tasks, making it easier to manage the users data and also to monitor the business performance."
+          toggle={props.toggle}
+          title="Admin Panel"
+          image={DashBoard}
+          giturl=""
+          liveurl=""
+          date='May 2024'
+          icon= {iconSets.projectA}
+       
+        />
+
+
+
+
+ 
+
+
+
+
+
         <Project
-          text="Developed a fully responsive web app where users can create and publish tech related contents
+          text="Developed a fully responsive web app as a capstone Project . Users can create and publish tech related contents
 Implemented a robust authentication system featuring login and sign-up pages utilizing Fire base authentication system ."
           text2="Users can login using Google account and other social media handlesThe Web App is built with Vue , it has  user-friendly interface ensuring a smooth and responsive user experience across devices ."
           toggle={props.toggle}
@@ -48,6 +96,7 @@ Implemented a robust authentication system featuring login and sign-up pages uti
           liveurl="https://deechatterapp.vercel.app/"
           giturl="https://github.com/divineenofua/DEChatter"
           date='MARCH 2024'
+          icon= {iconSets.projectB}
         />
         <Project
           text="Developed a fully responsive online school website utilizing HTML,CSS and Javascript exclusively , ensuring seamless user experience across various devices and screen sizes.
@@ -59,10 +108,16 @@ Implemented a robust authentication system"
           giturl="https://github.com/divineenofua/Altschool_Clone"
           liveurl="https://altschool-clone.vercel.app/"
           date='AUGUST 2023'
+          icon= {iconSets.projectC}
         />
 
 
-        <Project
+        
+
+
+{ showProjects ? <> 
+
+  <Project
           text="Developed a dynamic web application using React , utilizing GITHUB API to fetch and display users’ github profiles and projects,providing a seamless browsing experience for users to showcase their work."
           text2="
  Utilized error boundaries and a dedicated error page to enhance the application’s robustness and user experience by gracefully handling and presenting errors.
@@ -73,10 +128,10 @@ Implemented pagination for the repository list. Emphasized UI/UX design principl
           liveurl="https://stackblitz.com/edit/stackblitz-starters-csmquv"
           giturl="https://github.com/divineenofua/Github_Repo_Api"
           date='SEPTEMBER 2023'
+          icon= {iconSets.projectD}
         />
 
 
-{ showProjects ? <> 
   <Project
   text="The Vue Expense Tracker features a clean and intuitive user interface designed with Vue.js components and css for styling. Users can easily navigate through different sections of the application."
   text2="Users can add new expenses by entering details such as expense description, amount, and date. The application validates user input to ensure correct formatting and completeness.
@@ -87,6 +142,7 @@ Implemented pagination for the repository list. Emphasized UI/UX design principl
   liveurl="https://github.com/divineenofua/Expense_tracker"
   giturl="https://expense-tracker-iota-eosin.vercel.app/"
   date='NOVEMBER 2023'
+  icon= {iconSets.projectE}
 />
   <Project
   text=" Designed and developed a visually engaging e-commerce website featuring a preloader, modal slider, toolbar, and customized scrollbar, enhancing user interaction and navigation throughout the shopping experience."
@@ -98,6 +154,7 @@ Implemented pagination for the repository list. Emphasized UI/UX design principl
   liveurl="https://dee-shop.vercel.app/"
   giturl="https://github.com/divineenofua/Ecommerce-website"
   date=' APRIL 2022'
+  icon= {iconSets.projectF}
 />  
 
    <Project
@@ -110,6 +167,7 @@ Implemented pagination for the repository list. Emphasized UI/UX design principl
   liveurl=" food-web-roan.vercel.app"
   giturl="https://github.com/divineenofua/food-web"
   date=' MAY 2022'
+  icon= {iconSets.projectG}
 />
   <Project
   text=" Implemented an intuitive and visually appealing layout using flexbox and grid techniques, optimizing the arrangement of content and ensuring seamless navigation across multiple pages."
@@ -120,6 +178,7 @@ Implemented pagination for the repository list. Emphasized UI/UX design principl
   liveurl=" https://rental-website-rho.vercel.app/"
   giturl="https://github.com/divineenofua/rental-website"
   date=' AUGUST 2022'
+  icon= {iconSets.projectH}
 />
 
 <Project
@@ -131,6 +190,7 @@ Implemented pagination for the repository list. Emphasized UI/UX design principl
   liveurl="dee-connect.vercel.app"
   giturl="https://github.com/divineenofua/social-media-website"
   date=' OCTOBER 2022'
+  icon= {iconSets.projectI}
 />
 <Project
   text=" In this project, I designed and developed a multipage school website using a combination of HTML for structure, CSS for styling, JavaScript for interactivity, and animations to enhance the user experience."
@@ -141,17 +201,18 @@ Implemented pagination for the repository list. Emphasized UI/UX design principl
   liveurl="http://multipage-school-site.vercel.app/"
   giturl="https://github.com/divineenofua/multipage-school-site"
   date=' NOVEMBER 2022'
+  icon= {iconSets.projectK}
 />
  </> : ''
 
 
-}
+}  
 
-      </div>
+      </div> 
       <div className="flex items-center justify-center">
      
      
-        <Link to="/projects">
+        {/* <Link to="/projects"> */}
           {" "}
           <button onClick={HandleClickProjects}
             className={
@@ -160,9 +221,9 @@ Implemented pagination for the repository list. Emphasized UI/UX design principl
                 : "animate-bounce bg-white border-purple-400 text-purple-400 rounded-md p-4 flex items-center gap-1 "
             }
           >
-            View More <FaArrowRight />
+           {showProjects ? 'View Less ' : 'View More '} <FaArrowRight />
           </button>
-        </Link>
+        {/* </Link> */}
 
 
 

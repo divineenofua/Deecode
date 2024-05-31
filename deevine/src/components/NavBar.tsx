@@ -29,8 +29,9 @@ const NavBar: React.FC<ChildProps>  = (props) => {
  
 
   return (
-     <div className= { !setMode ? " bg-darkMode-background fixed z-50 w-full " : "bg-lightMode-background fixed z-50 w-full" } > 
-      <nav className="px-6 py-4 max-w-screen-xl mx-auto max-h-20 relative  bg-transparent  rounded-xl shadow-lg flex items-center  justify-between ">
+    <div className="h-6   "> 
+     <div className=  " fixed  z-50 w-full " > 
+      <nav className="px-6 py-4       relative  bg-transparent  rounded-xl shadow-lg flex items-center  justify-between ">
         <div className="logo flex items-center cursor-pointer">
           <FaEarlybirds className="inline-block mr-2" />
           <h2 className="text-xl font-semibold ">DEEVINE</h2>
@@ -71,28 +72,28 @@ const NavBar: React.FC<ChildProps>  = (props) => {
             />
           )}
         </div>
-        {menu ? (
-          <div className=" right-0 left-0 top-20  bg-gray-800 p-10 z-50 absolute  md:hidden  ">
-            <ul className="flex-column items-center justify-center   text-xl    ">
+        {/* right-0 left-0 top-20  transition-all bg-gray-800 p-10 z-50 absolute  md:hidden  */}
+         
+          
+        
+      </nav>
+      <div className={`Menu ${!setMode ? 'darkbg' : 'lightbg'}    ${menu ? 'openMenu' : ''    }`}>
+            <ul className="flex-column items-center justify-center   text-xl      ">
               {myList.map((item) => (
                  item ==='Home' ? <a href='/' >
-                 <li  className=" hover:text-purple-900 pb-5 text-white cursor-pointer transition duration-700 hover:animate-bounce flex">
+                 <li  className= {!setMode ?" hover:text-purple-900 pb-5 text-white cursor-pointer transition duration-700 hover:animate-bounce flex" : 'hover:text-purple-900 pb-5 text-black cursor-pointer transition duration-700 hover:animate-bounce flex'}>
                  <FaDashcube /> {item}
                 </li></a> :
                             <a href={`#${item.toLowerCase()}`}> 
-                <li className=" hover:text-purple-900 pb-5 text-white cursor-pointer transition duration-700 hover:animate-bounce flex">
+                <li className={!setMode ?" hover:text-purple-900 pb-5 text-white cursor-pointer transition duration-700 hover:animate-bounce flex" : 'hover:text-purple-900 pb-5 text-black cursor-pointer transition duration-700 hover:animate-bounce flex'}>
                  <FaDashcube /> {item}
                 </li></a>
               ))}
             </ul>
           </div>
-        ) : (
-          ""
-        )}
-      </nav>
-  
     </div>
      
+    </div>
   );
 };
 
