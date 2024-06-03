@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
  import { useState } from 'react';
   
 function App() {
-  const [isToggleOn, setIsToggleOn] = useState(true);
+  const [isToggleOn, setIsToggleOn] = useState(false);
 
   // Function to toggle the boolean value
   const toggleState = () => {
