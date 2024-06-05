@@ -25,7 +25,7 @@ const Home: React.FC<ChildProps>  = (props) => {
     <div className="flex flex-col-reverse md:flex-row mx-auto   md:gap-11  p-10 items-center justify-around">
       <div className="  md:w-[70%]    text-left  ">
         <h1 className=" text-[24px] md:text-3xl font-semibold py-5  leading-10 ">Hi there ,
-        I'M ENOFUA DIVINE, front-end <span className=" text-purple-300">  developer  </span>and student.
+        I'M ENOFUA DIVINE, Front End <span className=" text-purple-300">  developer  </span>and student.
         </h1>
             <p className="  text-left text-[14px]     leading-8" >
 
