@@ -48,8 +48,8 @@ const Project: React.FC<ChildProps> = (props) => {
       }
     >
       <div className=" relative">
-        <div className=" w-full mt-10 rounded-lg bg-gradient-to-r from-blue-900  via-slate-950 to-purple-900  p-1">
-          <img className="" src={props.image} alt="image of project" />
+        <div className=" w-full mt-10 rounded-lg  bg-gray-200 p-1">
+          <img className="  " src={props.image} alt="image of project" />
         </div>
 
         <div className=" p-2 flex justify-between items-center">
@@ -58,11 +58,11 @@ const Project: React.FC<ChildProps> = (props) => {
           </div>
           <span>{props.date}</span>
         </div>
-        <div className="text">
+        <div className="text ">
           <h5 className="text-center pb-4 pt-4 ">{props.title}</h5>
-          <p className=" italic ">{props.text}</p>
+          <p className=" italic text-[14px]   ">{props.text}</p>
           {para ? (
-            <p className="pt-5 pb-10 italic">{props.text2}</p>
+            <p className="pt-5 pb-10 text-[14px]   italic">{props.text2}</p>
           ) : (
             "......."
           )}{" "}

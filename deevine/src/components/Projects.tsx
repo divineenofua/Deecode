@@ -65,7 +65,7 @@ const Projects: React.FC<ChildProps> = (props) => {
       <div className="md:grid md:mb-0 md:pb-0 grid-cols-3 m-10  gap-5">
 
       <Project
-          text="Built an admin panel consisting of a login and dashboard functionalities for a client's business.  Utilized Recharts to implement dynamic and interactive charts, providing insightful data visualization. "
+       text="This project is important to me because it was my first paid project as a front-end developer. It seemed very challenging at first but breaking it down made it less complex . "
           text2="This Application Streamlines administrative tasks, making it easier to manage the users data and also to monitor the business performance."
           toggle={props.toggle}
           title="Admin Panel"
@@ -77,19 +77,9 @@ const Projects: React.FC<ChildProps> = (props) => {
        
         />
 
-
-
-
- 
-
-
-
-
-
-        <Project
-          text="Developed a fully responsive web app as a capstone Project . Users can create and publish tech related contents
-Implemented a robust authentication system featuring login and sign-up pages utilizing Fire base authentication system ."
-          text2="Users can login using Google account and other social media handlesThe Web App is built with Vue , it has  user-friendly interface ensuring a smooth and responsive user experience across devices ."
+      <Project
+          text="This was my capstone Project for Altschool Africa. I had to navigate my way through the firebase documentation so as to be able to implement Fire base authentication system ."  
+ text2=" I really enjoyed working on this project because it was my first major project . I worked with vue and used pinia as my store Library. The most challenging aspect for me was saving the users data to the firebase database and then retrieving and displaying the data to the users."
           toggle={props.toggle}
           title="Chatter"
           image={chatter}
@@ -99,9 +89,8 @@ Implemented a robust authentication system featuring login and sign-up pages uti
           icon= {iconSets.projectB}
         />
         <Project
-          text="Developed a fully responsive online school website utilizing HTML,CSS and Javascript exclusively , ensuring seamless user experience across various devices and screen sizes.
-Implemented a robust authentication system"
-          text2="featuring login and sign-up pages utilizing local storage ,enhancing user security and accessibility without the need for an external database Designed an intuitive and user-friendly interface, prioritizing user experience to facilitate easy navigation and interaction."
+          text="This project is a clone of the Altschool website. I worked with a fellow Junior developer on this website. This project features login and sign-up pages utilizing local storage  . we didn't know firebase and other similar platforms were a thing then.    "
+          text2=" The project was fun because we told our friends to sign up and try to login into the website and they did.And we would go to the local storage peep at their passwords and tell them we just guessed them correctly. I learnt Team work from this project , and how to manage conflicts from branches when working on a project with someone else. I worked on most of The UI and its responsiveness and also some logics that made the website functional."
           toggle={props.toggle}
           title="AltSchool Clone"
           image={Altschoolclone}
@@ -111,14 +100,10 @@ Implemented a robust authentication system"
           icon= {iconSets.projectC}
         />
 
-
-        
-
-
 { showProjects ? <> 
 
   <Project
-          text="Developed a dynamic web application using React , utilizing GITHUB API to fetch and display users’ github profiles and projects,providing a seamless browsing experience for users to showcase their work."
+          text="This project was for my second second semester exam at Altschool ,I utilized GITHUB API to fetch and display users’ github profiles and projects,providing a seamless browsing experience for users to showcase their work."
           text2="
  Utilized error boundaries and a dedicated error page to enhance the application’s robustness and user experience by gracefully handling and presenting errors.
 Implemented pagination for the repository list. Emphasized UI/UX design principles for an enhanced user experience."

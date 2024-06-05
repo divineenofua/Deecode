@@ -15,7 +15,7 @@ function App() {
   return (
     <>
  
-    <div className={ `bg ${isToggleOn ?  ' bodyBg' : 'lgBg'}` }>
+    <div className={ `bg   ${isToggleOn ?  ' bodyBg' : 'lgBg'}` }>
     <NavBar   toggleState={toggleState}  />
     <Router>
       <Routes>

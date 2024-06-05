@@ -16,10 +16,12 @@ module.exports = {
           background:'#ffffff',
           text: '#333333',
         },
-        width: {
-          widthe:'20px'
-        }
+        
       },
+      screens: {
+        'widthe':'1024px',
+         
+      }
        
     },
   },

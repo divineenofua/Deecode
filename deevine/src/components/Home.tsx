@@ -22,12 +22,12 @@ const Home: React.FC<ChildProps>  = (props) => {
    return (
     <> 
      
-    <div className="flex flex-col-reverse md:flex-row mx-auto   md:gap-24  p-10 items-center justify-around">
+    <div className="flex flex-col-reverse md:flex-row mx-auto   md:gap-11  p-10 items-center justify-around">
       <div className="  md:w-[70%]    text-left  ">
-        <h1 className=" text-3xl font-semibold py-5 ">
-        I'M ENOFUA DIVINE
+        <h1 className=" text-[24px] md:text-3xl font-semibold py-5  leading-10 ">Hi there ,
+        I'M ENOFUA DIVINE, front-end <span className=" text-purple-300">  developer  </span>and student.
         </h1>
-            <p className="  text-left text-[13px]     leading-8" >
+            <p className="  text-left text-[14px]     leading-8" >
 
 Growing up, I've always been fascinated by electronics and other displays of technology. I would try to comprehend with my young mind how these things worked. I recall studying my TV and its remote control, or a car and its key, and wondering how the remote could control the TV and how the car key could open the car doors even from a distance. How did it all work? This curiosity motivated me to study Electrical and Electronics Engineering.
         </p>

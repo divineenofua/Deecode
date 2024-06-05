@@ -29,7 +29,7 @@ const NavBar: React.FC<ChildProps>  = (props) => {
  
 
   return (
-    <div className="h-6   "> 
+    <div className="h-11   "> 
      <div className=  " fixed  z-50 w-full " > 
       <nav className="px-6 py-4       relative  bg-transparent  rounded-xl shadow-lg flex items-center  justify-between ">
         <div className="logo flex items-center cursor-pointer">
@@ -39,11 +39,11 @@ const NavBar: React.FC<ChildProps>  = (props) => {
         <div className="md:flex  hidden content-center justify-center ">
           <ul className="flex space-x-4">
             {myList.map((item) => (  
-              item ==='Home' ? <a href='/' >
+              item ==='Home' ? <a key={item} href='/' >
               <li className=" hover:text-purple-900  cursor-pointer hover:animate-bounce flex">
               <FaDashcube /> {item}
              </li></a> :
-            <a href={`#${item.toLowerCase()}`}> 
+            <a key={item} href={`#${item.toLowerCase()}`}> 
                 <li className=" hover:text-purple-900  cursor-pointer hover:animate-bounce flex">
                  <FaDashcube /> {item}
                 </li> </a> 
@@ -80,7 +80,7 @@ const NavBar: React.FC<ChildProps>  = (props) => {
       <div className={`Menu ${setMode ? 'darkbg' : 'lightbg'}    ${menu ? 'openMenu' : ''    }`}>
             <ul className="flex-column items-center justify-center   text-xl      ">
               {myList.map((item) => (
-                 item ==='Home' ? <a href='/' >
+                 item ==='Home' ? <a key={item}href='/' >
                  <li  className= {setMode ?" hover:text-purple-900 pb-5 text-white cursor-pointer transition duration-700 hover:animate-bounce flex" : 'hover:text-purple-900 pb-5 text-black cursor-pointer transition duration-700 hover:animate-bounce flex'}>
                  <FaDashcube /> {item}
                 </li></a> :
