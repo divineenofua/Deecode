@@ -86,3 +86,26 @@
 }
 
   
+.project{
+  
+  box-shadow:
+  0 1px 1px hsl(0deg 0% 0% / 0.075),
+  0 2px 2px hsl(0deg 0% 0% / 0.075),
+  0 4px 4px hsl(0deg 0% 0% / 0.075),
+  0 8px 8px hsl(0deg 0% 0% / 0.075),
+  0 16px 16px hsl(0deg 0% 0% / 0.075)
+;
+}
+/* .img{
+  box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);
+} */
+
+.purp{
+     --tw-text-opacity: 1;
+    color: rgb(240 171 252 / var(--tw-text-opacity));
+
+}
+.blue{
+  --tw-text-opacity: 1;
+  color: rgb(14 165 233 / var(--tw-text-opacity));
+}

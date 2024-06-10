@@ -41,19 +41,19 @@ const Project: React.FC<ChildProps> = (props) => {
   };
   return (
     <div
-      className={
+      className={  
         props.toggle
-          ? " hover:border-purple-700 hover:border cursor-pointer  bg-darkMode-layer p-6 mb-10 rounded-xl flex items-center justify-center"
-          : "border-purple-100 shadow-md border cursor-pointer  bg-lightMode-layer  p-6 mb-10 rounded-xl flex items-center justify-center"
+          ? " hover:border-gray-700 border border-darkMode-background   shadow-lg  bg-darkMode-layer p-6 mb-10 rounded-xl flex items-center justify-center"
+          : "hover:border-purple-200 shadow-md border   bg-lightMode-layer  p-6 mb-10 rounded-xl flex items-center  project justify-center"
       }
     >
       <div className=" relative">
-        <div className=" w-full mt-10 rounded-lg  bg-gray-200 p-1">
-          <img className="  " src={props.image} alt="image of project" />
+        <div className=" w-full mt-10 rounded-lg img shadow-lg bg-white p-1">
+          <img className=" rounded-lg " src={props.image} alt="image of project" />
         </div>
 
         <div className=" p-2 flex justify-between items-center">
-          <div className="flex items-center gap-1 text-purple-400 text-2xl font-bold">
+          <div className= { ` bg ${props. toggle ?"purp flex items-center gap-1   text-2xl font-bold" : 'blue flex items-center gap-1   text-2xl font-bold'}` } >
            {props.icon.map((icon, index) => ( <span key={index}>{icon}</span>))}
           </div>
           <span>{props.date}</span>
@@ -69,12 +69,12 @@ const Project: React.FC<ChildProps> = (props) => {
           <br />
           <span
             onClick={HandleClickPara}
-            className=" font-serif  pt-5 text-purple-500 text-xl cursor-pointer  "
+            className= { ` bg ${props. toggle ?"purp  font-serif  pt-5   text-xl cursor-pointer" : 'blue  font-serif  pt-5   text-xl cursor-pointer'}` } 
           >
             {para ? " View less" : "View more"}
           </span>
         </div>
-        <div className=" text-purple-400 text-xl  flex pt-5 justify-end gap-3">
+        <div className= { ` bg ${props. toggle ?"purp text-xl  flex pt-5 justify-end gap-3" : 'blue    text-xl  flex pt-5 justify-end gap-3'}` }>
           <div onMouseEnter={HandleShowText} onMouseLeave={HandleHideText}>
             <a href={props.giturl}>
               <FaGithub />{" "}

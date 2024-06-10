@@ -57,12 +57,12 @@ const Projects: React.FC<ChildProps> = (props) => {
       id="projects" 
     >
       <div className="text-center pt-10 pb-10">
-        <h1 className=" pb-3 font-sans italic text-purple-400 text-5xl">
+        <h1 className= { ` bg ${props. toggle ?"purp  pb-3 font-sans italic   text-5xl" : 'blue  pb-3 font-sans italic   text-5xl'}` } >
           Projects
         </h1>
         <span className="text-xl">Here are a few of my Works</span>
       </div>
-      <div className="md:grid md:mb-0 md:pb-0 grid-cols-3 m-10  gap-5">
+      <div className="md:grid md:mb-0 md:pb-0  grid-cols-3 m-10  gap-5">
 
       <Project
        text="This project is important to me because it was my first paid project as a front-end developer. It seemed very challenging at first but breaking it down made it less complex . "
@@ -202,8 +202,8 @@ Implemented pagination for the repository list. Emphasized UI/UX design principl
           <button onClick={HandleClickProjects}
             className={
               props.toggle
-                ? "animate-bounce bg-purple-900 hover:bg-purple-400 rounded-md p-4 flex items-center gap-1 "
-                : "animate-bounce bg-white border-purple-400 text-purple-400 rounded-md p-4 flex items-center gap-1 "
+                ? "animate-bounce  hover:bg-purple-500 purp  border-fuchsia-200 border  rounded-md p-4 flex items-center gap-1 "
+                : "animate-bounce border-blue-200 border bg-white blue rounded-md p-4 flex items-center gap-1 "
             }
           >
            {showProjects ? 'View Less ' : 'View More '} <FaArrowRight />

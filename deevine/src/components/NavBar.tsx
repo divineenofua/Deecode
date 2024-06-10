@@ -30,9 +30,9 @@ const NavBar: React.FC<ChildProps>  = (props) => {
 
   return (
     <div className="h-11   "> 
-     <div className=  " fixed  z-50 w-full " > 
+     <div className= {`bg ${setMode ?  ' bodyBg fixed  z-50 w-full' : 'lgBg fixed  z-50 w-full' } `} > 
       <nav className="px-6 py-4       relative  bg-transparent  rounded-xl shadow-lg flex items-center  justify-between ">
-        <div className="logo flex items-center cursor-pointer">
+        <div className= { ` bg  ${ setMode ? "purp logo flex items-center cursor-pointer " : 'blue logo flex items-center cursor-pointer'}` }>
           <FaEarlybirds className="inline-block mr-2" />
           <h2 className="text-xl font-semibold ">DEEVINE</h2>
         </div>
